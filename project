@@ -1,0 +1,11 @@
+1- create a cluster on your local machine using minikube 
+2- create a docker private repo called “wordpress”
+3- create a github repo called “wordpress-container”
+4- push the wordpress code to your repo (copy the wordpress code from its official repo)
+5- create a docker file for wordpress and configure workflow to build and push the image to docker hub ‘s private repo
+6- install argocd on your cluster 
+7- create a branch on your wordpress’s git repo and call it helm
+8- create a helm chart for your wordpress and push it to this branch 
+9- configure your argocd to deploy automatically when the image version changes in your helm values
+======================================
+Extra : replace helm with kustomize and explain the difference 

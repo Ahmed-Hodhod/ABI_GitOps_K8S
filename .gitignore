@@ -5,3 +5,6 @@
 ddd*
 dummy*
 minikube-linux-amd64
+./wordpress-container*
+*wordpress-container*
+wordpress-container/
