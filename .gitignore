@@ -8,3 +8,4 @@ minikube-linux-amd64
 ./wordpress-container*
 *wordpress-container*
 wordpress-container/
+argocd-linux-amd64

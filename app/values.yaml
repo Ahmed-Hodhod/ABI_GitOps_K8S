@@ -1,0 +1,18 @@
+wordpress:
+  image:
+    repository: ahmedhodhod1/wordpress
+    tag: latest
+  service:
+    type: NodePort
+    port: 80
+    nodePort: 30080  # Optional: Define a specific node port
+  pvc:
+    storage: 20Gi
+
+mysql:
+  rootPassword: password
+  database: wordpress
+  user: wordpress
+  password: password
+  pvc:
+    storage: 20Gi

@@ -66,3 +66,22 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 
 
+### HELM 
+```
+helm create app 
+ helm install app ./app
+ helm upgrade app app/ --values app/values.yaml
+```
+
+
+docker: 
+
+
+docker login -u ahmedhodhod1
+cat ~/.docker/config.json
+
+kubectl create secret generic regcred \
+    --from-file=.dockerconfigjson=/home/codespace/.docker/config.json \
+    --type=kubernetes.io/dockerconfigjson
+
+kubectl get secret regcred --output=yaml
