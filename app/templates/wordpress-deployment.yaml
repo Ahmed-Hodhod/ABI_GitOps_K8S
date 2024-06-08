@@ -18,7 +18,7 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: {{ .Values.wordpress.image.repository }}:{{ .Values.wordpress.image.tag }}
+      - image: wordpress #{{ .Values.wordpress.image.repository }}:{{ .Values.wordpress.image.tag }}
         name: wordpress
         imagePullSecrets:
         - name: regcred
