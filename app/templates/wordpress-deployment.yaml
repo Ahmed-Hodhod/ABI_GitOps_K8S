@@ -20,8 +20,8 @@ spec:
       containers:
       - image: wordpress #{{ .Values.wordpress.image.repository }}:{{ .Values.wordpress.image.tag }}
         name: wordpress
-        imagePullSecrets:
-        - name: regcred
+        # imagePullSecrets:
+        # - name: regcred
 
         env:
         - name: WORDPRESS_DB_HOST
