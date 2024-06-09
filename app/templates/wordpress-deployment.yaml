@@ -17,11 +17,11 @@ spec:
         app: wordpress
         tier: frontend
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
-      - image: wordpress #{{ .Values.wordpress.image.repository }}:{{ .Values.wordpress.image.tag }}
+      - image: {{ .Values.wordpress.image.repository }}:{{ .Values.wordpress.image.tag }}
         name: wordpress
-        # imagePullSecrets:
-        # - name: regcred
 
         env:
         - name: WORDPRESS_DB_HOST
