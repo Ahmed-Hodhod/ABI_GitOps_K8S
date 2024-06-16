@@ -1,12 +1,5 @@
-resources: 
-- ../../base/docker_secret.yaml 
-- ../../base/wordpress-deployment.yaml 
-- ../../base/wordpress-service.yaml 
-- ../../base/wordpress-pvc.yaml 
-- ../../base/mysql-deployment.yaml 
-- ../../base/mysql-service.yaml 
-- ../../base/mysql-pvc.yaml 
-- ../../base/secret.yaml 
+bases:
+- ../../base
 
 commonLabels:
   app: dev
