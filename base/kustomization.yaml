@@ -1,0 +1,28 @@
+resources: 
+- docker_secret.yaml 
+- wordpress-deployment.yaml 
+- wordpress-service.yaml 
+- wordpress-pvc.yaml 
+- mysql-deployment.yaml 
+- mysql-service.yaml 
+- mysql-pvc.yaml 
+- secret.yaml 
+
+commonLabels:
+  app: mykustomapp
+
+
+namespace: base 
+
+commonAnnotations:
+  app: mykustom-annontations
+
+namePrefix:
+  kustom-
+
+nameSuffix:
+  -v1
+
+# configMapGenerator:
+# - name: mykustom-map
+#   env: config.properties
