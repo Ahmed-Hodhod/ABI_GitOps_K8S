@@ -93,3 +93,8 @@ kubectl get secret regcred --output=yaml
 ### Forward the traffic 
 
 kubectl port-forward svc/wordpress 8000:80
+
+
+
+### Create namespace
+kubectl create namespace base 

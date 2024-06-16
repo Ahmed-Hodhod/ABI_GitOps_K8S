@@ -1,11 +1,15 @@
-bases:
+resources:
 - ../../base
 
 commonLabels:
   app: dev
 
 
-namespace: dev 
+namespace: dev
+
+patchesStrategicMerge: 
+  - wordpress_svc.yaml
+
 
 commonAnnotations:
   app: kustom-dev
@@ -16,8 +20,8 @@ namePrefix:
 nameSuffix:
   -v1
 
-patches:
-- wordpress-service-port.yaml 
+
+
 
 # configMapGenerator:
 # - name: mykustom-map
