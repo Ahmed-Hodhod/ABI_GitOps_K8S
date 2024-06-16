@@ -16,6 +16,9 @@ namePrefix:
 nameSuffix:
   -v1
 
+patches:
+- wordpress-service-port.yaml 
+
 # configMapGenerator:
 # - name: mykustom-map
 #   env: config.properties
