@@ -1,0 +1,21 @@
+resources:
+- ../../base
+
+commonLabels:
+  app: prod
+
+namespace: prod
+
+patchesStrategicMerge: 
+  - wordpress_svc.yaml
+
+commonAnnotations:
+  app: kustom-prod
+
+namePrefix:
+  prod-
+
+nameSuffix:
+  -v1
+
+
