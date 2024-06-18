@@ -12,10 +12,10 @@ patchesStrategicMerge:
 commonAnnotations:
   app: kustom-prod
 
-namePrefix:
-  prod-
+# namePrefix:
+#   prod-
 
-nameSuffix:
-  -v1
+# nameSuffix:
+#   -v1
 
 
