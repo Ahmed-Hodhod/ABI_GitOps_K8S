@@ -11,13 +11,18 @@ resources:
 commonLabels:
   app: mykustomapp
 
-
-namespace: base 
-
 commonAnnotations:
   app: mykustom-annontations
 
 
+# configMapGenerator:
+# - name: mykustom-config
+#   env: config.properties
+
+
 configMapGenerator:
 - name: mykustom-config
-  env: config.properties
+  literals:
+    - WORDPRESS_DB_USER=wordpress
+    - MYSQL_DATABASE=wordpress
+    - MYSQL_USER=wordpress
