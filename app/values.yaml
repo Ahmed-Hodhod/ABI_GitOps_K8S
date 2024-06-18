@@ -15,4 +15,4 @@ mysql:
   user: wordpress
   password: password
   pvc:
-    storage: 20Gi
+    storage: 1Gi

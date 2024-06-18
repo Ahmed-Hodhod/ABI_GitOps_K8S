@@ -21,6 +21,7 @@ spec:
       - name: regcred
       containers:
       - image: {{ .Values.wordpress.image.repository }}:{{ .Values.wordpress.image.tag }}
+        
         name: wordpress
 
         env:
