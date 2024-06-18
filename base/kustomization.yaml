@@ -17,12 +17,7 @@ namespace: base
 commonAnnotations:
   app: mykustom-annontations
 
-namePrefix:
-  kustom-
 
-nameSuffix:
-  -v3
-
-# configMapGenerator:
-# - name: mykustom-map
-#   env: config.properties
+configMapGenerator:
+- name: mykustom-config
+  env: config.properties
