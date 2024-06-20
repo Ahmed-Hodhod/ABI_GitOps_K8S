@@ -1,7 +1,7 @@
 wordpress:
   image:
     repository: ahmedhodhod1/wordpress
-    tag: 773fd6e
+    tag: 5ea1b62
   service:
     type: NodePort
     port: 80
