@@ -295,11 +295,3 @@ The Kustomize configuration files can be found in the `Kustomize` branch of the 
 ## Commands Reference
 
 For a comprehensive list of commands used throughout this project, please refer to the [commands.md](commands.md) file. This file contains instructions and commands used to deploy, manage, and configure the WordPress application on Kubernetes, using Helm, Kustomize, and ArgoCD. 
-
-
-## Usage
-Once the WordPress application is deployed, access it using the NodePort or LoadBalancer IP associated with the WordPress service. You can forward localhost port to wordpress service to access wordpress via your machine:
-
-```
-kubectl port-forward service/wordpress 8080:80
-'''
