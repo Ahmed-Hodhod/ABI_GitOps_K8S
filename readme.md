@@ -1,3 +1,4 @@
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Ahmed-Hodhod/ABI_GitOps_K8S)
 
 ## Video Demo
 
