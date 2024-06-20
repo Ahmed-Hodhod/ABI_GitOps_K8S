@@ -3,6 +3,9 @@
 
 For a step-by-step walkthrough of the project setup and deployment process, [watch the video demo](https://youtu.be/_v6lA5V4New).
 
+## Wordpress Application Repository 
+
+The docker image is built based off the wordpress application which can be found in this repo, [wordpress-container repository](https://github.com/Ahmed-Hodhod/wordpress-container/tree/master).
 
 ## Project Objectives
 
