@@ -1,6 +1,7 @@
-## Project Demo
-[Video Demo](https://youtu.be/_v6lA5V4New)
 
+## Video Demo
+
+For a step-by-step walkthrough of the project setup and deployment process, [watch the video demo](https://youtu.be/_v6lA5V4New).
 
 
 ## Project Objectives
