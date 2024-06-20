@@ -1,26 +1,30 @@
-### Project Objectives
+## Project Objectives
 
-- Create a cluster on your local machine using minikube 
-- Create a private repo on DockerHub called “wordpress”
-- Create a github repo called “wordpress-container”
-- Push the wordpress code to your repo (copy the wordpress code from its official repo)
-- Create a dockerfile for wordpress and configure the workflow to build and push the image to dockerhub‘s private repo
-- Install argocd on your cluster 
-- Create a helm chart for your project 
-- Create a Kustomize application for your project 
-- configure your argocd to deploy automatically when the image version changes in your helm values
-- Configure Argocd to pull from a private registry 
+This project aims to deploy a WordPress application with a MySQL database on a local Kubernetes cluster using various tools and technologies. Below are the key objectives:
 
-### Tools and Technologies 
+- **Create a Local Cluster**: Set up a Kubernetes cluster on your local machine using Minikube.
+- **DockerHub Repository**: Create a private repository on DockerHub named “wordpress”.
+- **GitHub Repository**: Create a GitHub repository named “wordpress-container”.
+- **Push WordPress Code**: Copy the WordPress code from its official repository and push it to your GitHub repository.
+- **Dockerfile Configuration**: Create a Dockerfile for WordPress and configure a GitHub Actions workflow to build and push the image to the private DockerHub repository.
+- **Install ArgoCD**: Set up ArgoCD on your Kubernetes cluster.
+- **Helm Chart Creation**: Develop a Helm chart for the WordPress application.
+- **Kustomize Application**: Create a Kustomize application for the project.
+- **Automatic Deployment with ArgoCD**: Configure ArgoCD to automatically deploy the application when the image version changes in the Helm values.
+- **Private Registry Configuration**: Configure ArgoCD to pull from a private Docker registry.
 
-- Minikube 
-- Github Codespace
-- Kubernetes 
-- Docker 
-- Helm Charts 
-- Kustomize 
-- Argocd 
-- Ubuntu 
+## Tools and Technologies
+
+The project utilizes the following tools and technologies:
+
+- **Minikube**: To create a local Kubernetes cluster.
+- **GitHub Codespace**: For a cloud-based development environment.
+- **Kubernetes**: To orchestrate the deployment of the application.
+- **Docker**: To containerize the application.
+- **Helm Charts**: For Kubernetes application deployment.
+- **Kustomize**: To customize Kubernetes configurations.
+- **ArgoCD**: For continuous delivery and GitOps-based deployment.
+- **Ubuntu**: As the operating system for development and deployment.
 
 ## GitHub Actions Workflow
 
@@ -28,7 +32,7 @@ This GitHub Actions workflow automates the process of building a Docker image fr
 
 ### Workflow Overview
 
-**1. Build and Push Docker Image **
+**1. Build and Push Docker Image**
 
 - **Checkout repository**: Uses the `actions/checkout` action to checkout the repository code.
 - **Set up Docker Buildx**: Sets up Docker Buildx for building multi-platform images.
