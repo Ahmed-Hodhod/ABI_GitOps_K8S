@@ -20,7 +20,7 @@ spec:
       imagePullSecrets:
       - name: regcred
       containers:
-      - image: ahmedhodhod1/wordpress:773fd6e
+      - image: ahmedhodhod1/wordpress:4ea307f
         name: wordpress
 
 
