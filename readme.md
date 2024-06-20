@@ -150,10 +150,107 @@ Once the deployment is complete, you can access the WordPress application using 
 
 The Helm chart templates and configuration files can be found in the [ABI_GitOps_K8S repository](https://github.com/Ahmed-Hodhod/ABI_GitOps_K8S).
 
-By following these steps, you can easily deploy and manage your WordPress application on Kubernetes using Helm and ArgoCD.
+## Deploying with Kustomize
 
-### Installation
+This project uses Kustomize to manage configurations for deploying the WordPress application in different environments (production and development). Kustomize allows you to customize Kubernetes resource configurations in a declarative manner without modifying the original manifests.
 
-### Using Kustomize 
+### Kustomize Structure
 
-### Acknowledgement 
+The Kustomize setup is organized into two main folders:
+
+- **base**: Contains the common manifests for the application.
+- **overlays**: Contains environment-specific customizations (patches and `kustomization.yaml` files) for both production and development environments.
+
+### Base Configuration
+
+The `base` folder includes the core manifests for deploying the WordPress application. These manifests are shared across all environments.
+
+### Overlay Configuration
+
+The `overlays` folder contains subfolders for each environment, such as `prod` and `dev`, with specific kustomizations:
+
+- **prod**: Contains kustomizations for the production environment.
+- **dev**: Contains kustomizations for the development environment.
+
+Each overlay folder includes a `kustomization.yaml` file and any patches required to modify the base configuration for that specific environment.
+
+### Example: Production Environment
+
+The `kustomization.yaml` file for the production environment references the base configuration and includes specific patches and labels:
+
+```yaml
+bases:
+- ../../base
+
+commonLabels:
+  app: prod
+
+namespace: prod
+
+patchesStrategicMerge: 
+  - wordpress_svc.yaml
+
+commonAnnotations:
+  app: kustom-prod
+```
+
+#### Patch Example
+
+Here is an example of a patch (`wordpress_svc.yaml`) used to customize the WordPress service for the production environment:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  ports:
+    - port: 80
+      nodePort: 30086
+```
+
+### Applying Kustomize Configurations
+
+To deploy the application using Kustomize, you can use the following commands for each environment:
+
+**Production Environment**:
+```sh
+kubectl apply -k overlays/prod
+```
+
+**Development Environment**:
+```sh
+kubectl apply -k overlays/dev
+```
+
+### Repository Structure
+
+The Kustomize files are stored in a separate branch named `Kustomize`. The structure is as follows:
+
+```
+kustomize/
+  ├── base/
+  │   ├── deployment.yaml
+  │   ├── service.yaml
+  │   └── kustomization.yaml
+  ├── overlays/
+      ├── prod/
+      │   ├── wordpress_svc.yaml
+      │   └── kustomization.yaml
+      ├── dev/
+          ├── wordpress_svc.yaml
+          └── kustomization.yaml
+```
+
+By using Kustomize, you can easily manage and deploy your application across multiple environments with clear separation and reusable configurations.
+
+### Repository Link
+
+The Kustomize configuration files can be found in the `Kustomize` branch of the [ABI_GitOps_K8S repository](https://github.com/Ahmed-Hodhod/ABI_GitOps_K8S/tree/Kustomize).
+
+ 
+## Commands Reference
+
+For a comprehensive list of commands used throughout this project, please refer to the [commands.md](commands.md) file. This file contains instructions and commands used to deploy, manage, and configure the WordPress application on Kubernetes, using Helm, Kustomize, and ArgoCD. 
