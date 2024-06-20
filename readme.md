@@ -1,3 +1,8 @@
+## Project Demo
+[Video Demo](https://youtu.be/_v6lA5V4New)
+
+
+
 ## Project Objectives
 
 This project aims to deploy a WordPress application with a MySQL database on a local Kubernetes cluster using various tools and technologies. Below are the key objectives:
@@ -53,6 +58,25 @@ This GitHub Actions workflow automates the process of building a Docker image fr
 - **Commit and push changes**: Commits and pushes the updated Kustomize configuration back to the repository.
 
 
+These are the three jobs we have in the workflow.
+
+![Github Actions workflow](./screenshots/workflow.PNG)
+
+
+These are the secrets that should be provided to the workflow. 
+
+![Workflow secrets](./screenshots/secrets.PNG)
+
+This is the push history to the dockerhub private repo. 
+
+![DockerHub private repo](./screenshots/dockerhub.PNG)
+
+If you notice, this is the last commit to the wordpress repo which is the same as the latest tag in the dockerhub private repo.
+
+![Github commit ](./screenshots/commit.PNG)
+
+
+
 ## Configuring ArgoCD to Pull from a Private Repository
 
 To enable ArgoCD to access a private GitHub repository, follow these steps:
@@ -84,6 +108,10 @@ argocd repo add https://github.com/Ahmed-Hodhod/ABI_GitOps_K8S --username Ahmed-
 - **Password**: The personal access token (PAT) generated from GitHub.
 
 By following these steps, ArgoCD will be configured to securely pull from your specified private repository, facilitating seamless integration and continuous deployment workflows.
+
+This is ArgoCD connected repo.
+
+![Argocd connected Repo](./screenshots/repo.PNG)
 
 ## Deploying the Application with Helm
 
@@ -149,6 +177,10 @@ Once the deployment is complete, you can access the WordPress application using 
 ### Repository Link
 
 The Helm chart templates and configuration files can be found in the [ABI_GitOps_K8S repository](https://github.com/Ahmed-Hodhod/ABI_GitOps_K8S).
+
+This is what you should see after running this helm application. 
+![HELM Application](./screenshots/helm.PNG)
+
 
 ## Deploying with Kustomize
 
@@ -245,6 +277,10 @@ kustomize/
 ```
 
 By using Kustomize, you can easily manage and deploy your application across multiple environments with clear separation and reusable configurations.
+
+This is what you should see after running this kustomize application with argocd. 
+![Kustomize Application](./screenshots/kustom.PNG)
+
 
 ### Repository Link
 

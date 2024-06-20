@@ -78,7 +78,7 @@ helm create app
 
 ### docker
 
-
+```
 docker login -u ahmedhodhod1
 cat ~/.docker/config.json
 cat ~/.docker/config.json | base64 -w0   
@@ -88,6 +88,7 @@ kubectl create secret generic regcred \
     --type=kubernetes.io/dockerconfigjson
 
 kubectl get secret regcred --output=yaml
+```
 
 
 ### Forward the traffic 
